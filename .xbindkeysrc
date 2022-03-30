@@ -1,0 +1,18 @@
+# volume up
+"amixer -c 0 sset Master 10%+"
+	m:0x0 + c:123
+# volume down
+"amixer -c 0 sset Master 10%-"
+	m:0x0 + c:122
+# mute/unmute
+"amixer -c 0 sset Master toggle"
+	m:0x0 + c:121
+# printscreen key - screenshot
+"gnome-screenshot -i"
+	m:0x0 + c:107
+# brightness up
+"xbacklight -inc 1"
+	m:0x0 + c:233
+# brightness down
+"xbacklight -dec 1"
+	m:0x0 + c:232
