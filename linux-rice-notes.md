@@ -1,5 +1,22 @@
 # LINUX RICE / WORKFLOW NOTES
 
+# How to Set up SSH Remote Repository (GitHub)
+Install openssh package:  
+`sudo pacman -S openssh`
+Use the `ssh-keygen -t ed25519 -C "your_email@example.com"` command to generate a key, which you'll want a password for. (ed25519 the most secure) Then, go to GitHub > Settings > SSH&GPG keys > make a new key. Paste in your **public key**, not your private key. Then, setup the repository and set the remote origin using ssh. The commands are as follows:  
+
+```
+git init
+git branch -b main
+# git add, git rm, make git ignore, etc.
+git remote add origin git@github.com:[Username]/[Repo].git
+git remote -v # use this to verify
+git commit -m "added stuff" # or whatever message you want
+git push origin main # OR
+git push --set-upstream origin main --force # if you are setting up the remote
+```
+
+
 # Color theme for GTK apps
 Even though we're not using the GNOME Desktop Environment, that doesn't mean we can't use gnome GUI apps. GNOME has themes downloadable from an official site (gnome-look I believe), and there's plenty of ricers on GitHub with their own custom themes. Install themes into the directory: `/usr/share/themes`. Then edit the gtk config files at `~/.config/gtk-3.0/settings.ini` and `~/.config/gtk-4.0/settings.ini`. Some apps (mainly chromium) will require a full restart of X for changes to take effect.
 
